@@ -1,0 +1,23 @@
+{
+  "name": "business-card-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cv9t0x/business-card-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cv9t0x/business-card-generator/issues"
+  },
+  "homepage": "https://github.com/cv9t0x/business-card-generator#readme",
+  "devDependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
