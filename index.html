@@ -28,7 +28,9 @@
 								/>
 
 								<div class="config__container">
-									<div class="config__container-item position">
+									<div
+										class="config__container-item position"
+									>
 										<input
 											id="pos-radio-l"
 											type="radio"
@@ -43,7 +45,11 @@
 											for="pos-radio-l"
 											class="position__label"
 										>
-											<img class="position__icon" src="./assets/icons/pos-l.svg" alt="position-left">
+											<img
+												class="position__icon"
+												src="./assets/icons/pos-l.svg"
+												alt="position-left"
+											/>
 										</label>
 
 										<input
@@ -61,7 +67,11 @@
 											for="pos-radio-c"
 											class="position__label"
 										>
-											<img class="position__icon" src="./assets/icons/pos-c.svg" alt="position-left">
+											<img
+												class="position__icon"
+												src="./assets/icons/pos-c.svg"
+												alt="position-left"
+											/>
 										</label>
 									</div>
 
@@ -97,12 +107,74 @@
 							</div>
 
 							<div class="color">
-								<input id="color-1" type="radio" class="color__input" name="color" value="black" checked>
-								<label for="color-1" class="color__label color__label--black"></label>
-								<input id="color-2" type="radio" class="color__input" name="color" value="blue">
-								<label for="color-2" class="color__label color__label--blue"></label>
+								<input
+									id="color-1"
+									type="radio"
+									class="color__input"
+									name="color"
+									value="black"
+									checked
+								/>
+								<label
+									for="color-1"
+									class="color__label color__label--black"
+								></label>
+								<input
+									id="color-2"
+									type="radio"
+									class="color__input"
+									name="color"
+									value="blue"
+								/>
+								<label
+									for="color-2"
+									class="color__label color__label--blue"
+								></label>
 							</div>
 						</li>
+
+						<li class="config__item">
+							<label for="telephone" class="config__label">
+								Phone number
+							</label>
+							<input
+								id="telephone"
+								type="tel"
+								class="config__input"
+								autocomplete="off"
+							/>
+							<div class="add-phone">
+								Add one more phone number
+							</div>
+						</li>
+
+						<li class="config__item">
+							<label for="email" class="config__label">
+								E-mail
+							</label>
+							<div class="config__wrapper">
+								<input
+									id="email"
+									type="mail"
+									class="config__input"
+									autocomplete="off"
+								/>
+
+								<div class="config__container">
+									<div class="config__container-item display">
+										<input
+											id="display-email"
+											type="checkbox"
+											class="display__input"
+										/>
+										<div class="display__title">
+											Display
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
 
 					<div class="form__wrapper">
 						<button class="form__btn">Apply</button>
