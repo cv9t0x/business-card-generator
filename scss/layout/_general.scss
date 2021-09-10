@@ -1,0 +1,7 @@
+.page {
+	@include box(100%);
+
+	@include flex-pos(center, normal);
+
+	background: center / cover no-repeat url('../../assets/img/bg.png');
+}

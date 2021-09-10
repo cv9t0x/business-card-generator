@@ -1,0 +1,166 @@
+.form {
+	@include box(100%);
+	max-width: 59rem;
+	padding: 0 1rem;
+
+	&__inner {
+		@include box(inherit);
+		min-height: 100vh;
+		padding: 0 1.5rem;
+
+		@include flex-dir(column);
+
+		background-color: $white;
+	}
+
+	&__title {
+		color: $secondary;
+	}
+
+	&__btn {
+		padding: 1rem 2.5rem;
+
+		border: none;
+		border-radius: 3.2rem;
+
+		color: $white;
+		background-color: $blue;
+	}
+}
+
+.config {
+	list-style-type: none;
+	padding: 0;
+
+	font-size: $font-size-md;
+
+	&__item,
+	&__wrapper,
+	&__container {
+		display: flex;
+	}
+
+	&__item {
+		flex-direction: column;
+		margin-bottom: 1.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__container {
+		margin-left: 2.5rem;
+
+		&-item {
+			margin-right: 1rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__label {
+		@include flex-dir(column);
+		margin-bottom: 1rem;
+
+		color: $secondary;
+	}
+
+	&__input {
+		max-width: 25rem;
+		min-width: 25rem;
+		padding: 0.4rem 0.6rem;
+
+		@include border(0.2rem);
+		border-color: $lightgray;
+		border-radius: 0.2rem;
+
+		font-size: $font-size-md;
+	}
+}
+
+.position,
+.font {
+	@include flex-pos(center);
+	flex-wrap: nowrap;
+
+	@include border(0.2rem);
+	border-color: $lightgray;
+	border-radius: 0.2rem;
+
+	&__input {
+		display: none;
+	}
+
+	&__label {
+		@include box(100%);
+
+		@include flex-pos(center);
+
+		background-color: $white;
+	}
+
+	&__input:checked + &__label {
+		background-color: $lightgray;
+	}
+}
+
+.position {
+	&__label {
+		padding: 0 1rem;
+	}
+
+	&__icon {
+		@include box(1.9, 1.5rem);
+	}
+}
+
+.font {
+	&__label {
+		padding: 0 0.6rem;
+	}
+}
+
+$colors: (
+	'black': $black,
+	'blue': $blue,
+);
+
+.color {
+	@include flex-pos(normal, center);
+	margin-top: 1rem;
+
+	&__input {
+		display: none;
+	}
+
+	&__label {
+		@include relative();
+
+		@include box(2.5rem);
+		margin-right: 0.5rem;
+
+		@include border(0.7rem);
+		border-radius: 50%;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+@mixin labelColor($key, $color) {
+	.color__label--#{$key} {
+		background-color: $color;
+	}
+	.color__input:checked + .color__label--#{$key} {
+		background-color: $white;
+		border-color: $color;
+	}
+}
+
+@each $key, $color in $colors {
+	@include labelColor($key, $color);
+}

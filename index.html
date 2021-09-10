@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>businessCardGenerator</title>
+		<link rel="stylesheet" href="css/style.min.css" />
+	</head>
+	<body>
+		<div class="page">
+			<div class="form">
+				<div class="form__inner">
+					<h3 class="form__title">Business card generator</h3>
+
+					<ul class="config">
+						<li class="config__item">
+							<label for="initials" class="config__label">
+								Surname, first name, patronymic
+							</label>
+
+							<div class="config__wrapper">
+								<input
+									class="config__input"
+									id="initials"
+									type="text"
+									autocomplete="off"
+								/>
+
+								<div class="config__container">
+									<div class="config__container-item position">
+										<input
+											id="pos-radio-l"
+											type="radio"
+											value="left"
+											name="position"
+											class="
+												position__input
+												position__input--left
+											"
+										/>
+										<label
+											for="pos-radio-l"
+											class="position__label"
+										>
+											<img class="position__icon" src="./assets/icons/pos-l.svg" alt="position-left">
+										</label>
+
+										<input
+											id="pos-radio-c"
+											type="radio"
+											value="center"
+											name="position"
+											class="
+												position__input
+												position__input--center
+											"
+											checked
+										/>
+										<label
+											for="pos-radio-c"
+											class="position__label"
+										>
+											<img class="position__icon" src="./assets/icons/pos-c.svg" alt="position-left">
+										</label>
+									</div>
+
+									<div class="font config__container-item">
+										<input
+											id="font-radio-sm"
+											type="radio"
+											value="small"
+											name="font"
+											class="font__input font__input--sm"
+										/>
+										<label
+											for="font-radio-sm"
+											class="font__label"
+											>24px</label
+										>
+
+										<input
+											id="font-radio-md"
+											type="radio"
+											value="medium"
+											name="font"
+											class="font__input font__input--md"
+											checked
+										/>
+										<label
+											for="font-radio-md"
+											class="font__label"
+											>26px</label
+										>
+									</div>
+								</div>
+							</div>
+
+							<div class="color">
+								<input id="color-1" type="radio" class="color__input" name="color" value="black" checked>
+								<label for="color-1" class="color__label color__label--black"></label>
+								<input id="color-2" type="radio" class="color__input" name="color" value="blue">
+								<label for="color-2" class="color__label color__label--blue"></label>
+							</div>
+						</li>
+
+					<div class="form__wrapper">
+						<button class="form__btn">Apply</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

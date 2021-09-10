@@ -1,0 +1,35 @@
+//Color
+$white: #fff;
+$black: #000;
+$gray: #707070;
+$lightgray: #d9d9d9;
+$blue: #3f88e8;
+
+$primary: $black;
+$secondary: $gray;
+
+//Font
+$font-family-primary: 'Roboto', sans-serif;
+
+$font-size-base: 1rem;
+$font-size-sm: $font-size-base * 1.2;
+$font-size-md: $font-size-base * 1.4;
+$font-size-lg: $font-size-base * 1.8;
+
+$font-weight-lt: 300;
+$font-weight-nl: 400;
+$font-weight-md: 500;
+$font-weight-bd: 700;
+
+$line-height-nl: 1;
+$line-height-md: 1.25;
+$line-height-lg: 1.75;
+
+$font-size-headings: (
+	h1: $font-size-base * 4.5,
+	h2: $font-size-base * 3,
+	h3: $font-size-base * 2,
+	h4: $font-size-base * 1.5,
+	h5: $font-size-base * 1.25,
+	h6: $font-size-base,
+);
