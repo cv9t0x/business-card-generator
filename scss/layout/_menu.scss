@@ -25,10 +25,13 @@
 
 //CONFIG
 .config {
-	@include flex-dir(column);
+	&,
+	&__item {
+		@include flex-dir(column);
+	}
 
 	&__label {
-		display: inline-block;
+		margin-bottom: 1rem;
 	}
 
 	&__item {
