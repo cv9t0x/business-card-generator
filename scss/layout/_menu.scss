@@ -25,9 +25,10 @@
 
 //CONFIG
 .config {
-	&,
+	@include flex-dir(column);
+
 	&__label {
-		@include flex-dir(column);
+		display: inline-block;
 	}
 
 	&__item {
