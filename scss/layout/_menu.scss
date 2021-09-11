@@ -1,0 +1,68 @@
+//MENU
+.menu {
+	&__inner {
+		@include flex-dir(column);
+
+		min-height: 100vh;
+		padding: 0 1.5rem;
+
+		background-color: $white;
+	}
+
+	&__title {
+		text-transform: initial;
+	}
+
+	&__btn {
+		padding: 1rem 2.5rem;
+
+		border-radius: 3.2rem;
+
+		color: $white;
+		background-color: $blue;
+	}
+}
+
+//CONFIG
+.config {
+	&,
+	&__label {
+		@include flex-dir(column);
+	}
+
+	&__item {
+		margin-bottom: 2.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__label-caption {
+		margin-bottom: 1rem;
+	}
+
+	&__input {
+		max-width: 25.5rem;
+		min-width: 25.5rem;
+		padding: 0.5rem;
+	}
+
+	.wrap {
+		display: flex;
+	}
+
+	.container {
+		@include flex-pos(normal, center);
+
+		margin-left: 3rem;
+
+		&__item {
+			margin-right: 1rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

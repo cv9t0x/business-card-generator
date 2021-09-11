@@ -5,3 +5,21 @@
 
 	background: center / cover no-repeat url('../../assets/img/bg.png');
 }
+
+.clean {
+	&-list {
+		padding: 0;
+
+		list-style-type: none;
+	}
+
+	&-btn {
+		border: none;
+	}
+}
+
+.input-border {
+	@include border;
+	border-color: $lightgray;
+	border-radius: 0.3rem;
+}

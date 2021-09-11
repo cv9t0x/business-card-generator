@@ -132,3 +132,24 @@
 		}
 	}
 }
+
+//COLORS FOR LABELS
+
+@mixin labelColor($key, $color) {
+	.color__item--#{$key} {
+		.color__content {
+			background-color: $color;
+		}
+
+		.color__btn:checked + .color__content {
+			background-color: $white;
+			border-color: $color;
+		}
+	}
+}
+
+@mixin fillColor($colors) {
+	@each $key, $color in $colors {
+		@include labelColor($key, $color);
+	}
+}

@@ -4,180 +4,580 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>businessCardGenerator</title>
-		<link rel="stylesheet" href="css/style.min.css" />
+		<link rel="stylesheet" href="./css/style.min.css" />
+		<title>CardGenerator</title>
 	</head>
 	<body>
 		<div class="page">
-			<div class="form">
-				<div class="form__inner">
-					<h3 class="form__title">Business card generator</h3>
+			<div class="menu">
+				<div class="menu__inner">
+					<h3 class="menu__title">Business card generator</h3>
 
-					<ul class="config">
+					<ul class="clean-list config">
 						<li class="config__item">
-							<label for="initials" class="config__label">
-								Surname, first name, patronymic
-							</label>
-
-							<div class="config__wrapper">
+							<label class="config__label">
+								<div class="config__label-caption">
+									Name of the company
+								</div>
 								<input
-									class="config__input"
-									id="initials"
 									type="text"
-									autocomplete="off"
+									class="input-border config__input"
 								/>
-
-								<div class="config__container">
-									<div
-										class="config__container-item position"
-									>
-										<input
-											id="pos-radio-l"
-											type="radio"
-											value="left"
-											name="position"
-											class="
-												position__input
-												position__input--left
-											"
-										/>
-										<label
-											for="pos-radio-l"
-											class="position__label"
-										>
-											<img
-												class="position__icon"
-												src="./assets/icons/pos-l.svg"
-												alt="position-left"
-											/>
-										</label>
-
-										<input
-											id="pos-radio-c"
-											type="radio"
-											value="center"
-											name="position"
-											class="
-												position__input
-												position__input--center
-											"
-											checked
-										/>
-										<label
-											for="pos-radio-c"
-											class="position__label"
-										>
-											<img
-												class="position__icon"
-												src="./assets/icons/pos-c.svg"
-												alt="position-left"
-											/>
-										</label>
-									</div>
-
-									<div class="font config__container-item">
-										<input
-											id="font-radio-sm"
-											type="radio"
-											value="small"
-											name="font"
-											class="font__input font__input--sm"
-										/>
-										<label
-											for="font-radio-sm"
-											class="font__label"
-											>24px</label
-										>
-
-										<input
-											id="font-radio-md"
-											type="radio"
-											value="medium"
-											name="font"
-											class="font__input font__input--md"
-											checked
-										/>
-										<label
-											for="font-radio-md"
-											class="font__label"
-											>26px</label
-										>
-									</div>
-								</div>
-							</div>
-
-							<div class="color">
-								<input
-									id="color-1"
-									type="radio"
-									class="color__input"
-									name="color"
-									value="black"
-									checked
-								/>
-								<label
-									for="color-1"
-									class="color__label color__label--black"
-								></label>
-								<input
-									id="color-2"
-									type="radio"
-									class="color__input"
-									name="color"
-									value="blue"
-								/>
-								<label
-									for="color-2"
-									class="color__label color__label--blue"
-								></label>
-							</div>
+							</label>
 						</li>
 
 						<li class="config__item">
-							<label for="telephone" class="config__label">
-								Phone number
+							<label class="config__label">
+								<div class="config__label-caption">
+									Surname, name and patronymic
+								</div>
+
+								<div class="wrap">
+									<input
+										type="text"
+										class="input-border config__input"
+									/>
+
+									<div class="container">
+										<ul
+											class="
+												clean-list
+												input-border
+												container__item
+												align
+											"
+										>
+											<li class="align__item">
+												<label class="align__label">
+													<input
+														type="radio"
+														class="align__btn"
+														name="title-align"
+														value="left"
+													/>
+
+													<div
+														class="
+															align__label-content
+														"
+													>
+														<img
+															src="./assets/icons/pos-l.svg"
+															alt=""
+															class="align__icon"
+														/>
+													</div>
+												</label>
+											</li>
+
+											<li class="align__item">
+												<label class="align__label">
+													<input
+														type="radio"
+														class="align__btn"
+														name="title-align"
+														value="center"
+														checked
+													/>
+
+													<div
+														class="
+															align__label-content
+														"
+													>
+														<img
+															src="./assets/icons/pos-c.svg"
+															alt=""
+															class="align__icon"
+														/>
+													</div>
+												</label>
+											</li>
+
+											<li class="align__item">
+												<label class="align__label">
+													<input
+														type="radio"
+														class="align__btn"
+														name="title-align"
+														value="right"
+													/>
+
+													<div
+														class="
+															align__label-content
+														"
+													>
+														<img
+															src="./assets/icons/pos-r.svg"
+															alt=""
+															class="align__icon"
+														/>
+													</div>
+												</label>
+											</li>
+										</ul>
+
+										<ul
+											class="
+												clean-list
+												input-border
+												container__item
+												font-size
+											"
+										>
+											<li class="font-size__item">
+												<label class="font-size__label">
+													<input
+														type="radio"
+														class="font-size__btn"
+														name="title-font-size"
+														value="24px"
+													/>
+
+													<div
+														class="
+															font-size__label-content
+														"
+													>
+														24px
+													</div>
+												</label>
+											</li>
+
+											<li class="font-size__item">
+												<label class="font-size__label">
+													<input
+														type="radio"
+														class="font-size__btn"
+														name="title-font-size"
+														value="26px"
+														checked
+													/>
+
+													<div
+														class="
+															font-size__label-content
+														"
+													>
+														26px
+													</div>
+												</label>
+											</li>
+
+											<li class="font-size__item">
+												<label class="font-size__label">
+													<input
+														type="radio"
+														class="font-size__btn"
+														name="title-font-size"
+														value="28px"
+													/>
+
+													<div
+														class="
+															font-size__label-content
+														"
+													>
+														28px
+													</div>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</label>
-							<input
-								id="telephone"
-								type="tel"
-								class="config__input"
-								autocomplete="off"
-							/>
-							<div class="add-phone">
-								Add one more phone number
-							</div>
+
+							<ul class="clean-list color">
+								<li class="color__item color__item--black">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="title-color"
+											value="#000"
+											checked
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--blue">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="title-color"
+											value="#3f88e8"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--red">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="title-color"
+											value="#e83f56"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--green">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="title-color"
+											value="#097a14"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--orange">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="title-color"
+											value="#dca40a"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--pink">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="title-color"
+											value="#dc0ad5"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+							</ul>
 						</li>
 
 						<li class="config__item">
-							<label for="email" class="config__label">
-								E-mail
-							</label>
-							<div class="config__wrapper">
-								<input
-									id="email"
-									type="mail"
-									class="config__input"
-									autocomplete="off"
-								/>
+							<label class="config__label">
+								<div class="config__label-caption">
+									Job title
+								</div>
 
-								<div class="config__container">
-									<div class="config__container-item display">
-										<input
-											id="display-email"
-											type="checkbox"
-											class="display__input"
-										/>
-										<div class="display__title">
-											Display
-										</div>
+								<div class="wrap">
+									<input
+										type="text"
+										class="input-border config__input"
+									/>
+
+									<div class="container">
+										<ul
+											class="
+												clean-list
+												input-border
+												container__item
+												align
+											"
+										>
+											<li class="align__item">
+												<label class="align__label">
+													<input
+														type="radio"
+														class="align__btn"
+														name="subtitle-align"
+														value="left"
+													/>
+
+													<div
+														class="
+															align__label-content
+														"
+													>
+														<img
+															src="./assets/icons/pos-l.svg"
+															alt=""
+															class="align__icon"
+														/>
+													</div>
+												</label>
+											</li>
+
+											<li class="align__item">
+												<label class="align__label">
+													<input
+														type="radio"
+														class="align__btn"
+														name="subtitle-align"
+														value="center"
+														checked
+													/>
+
+													<div
+														class="
+															align__label-content
+														"
+													>
+														<img
+															src="./assets/icons/pos-c.svg"
+															alt=""
+															class="align__icon"
+														/>
+													</div>
+												</label>
+											</li>
+
+											<li class="align__item">
+												<label class="align__label">
+													<input
+														type="radio"
+														class="align__btn"
+														name="subtitle-align"
+														value="right"
+													/>
+
+													<div
+														class="
+															align__label-content
+														"
+													>
+														<img
+															src="./assets/icons/pos-r.svg"
+															alt=""
+															class="align__icon"
+														/>
+													</div>
+												</label>
+											</li>
+										</ul>
+
+										<ul
+											class="
+												clean-list
+												input-border
+												container__item
+												font-size
+											"
+										>
+											<li class="font-size__item">
+												<label class="font-size__label">
+													<input
+														type="radio"
+														class="font-size__btn"
+														name="subtitle-font-size"
+														value="14px"
+													/>
+
+													<div
+														class="
+															font-size__label-content
+														"
+													>
+														14px
+													</div>
+												</label>
+											</li>
+
+											<li class="font-size__item">
+												<label class="font-size__label">
+													<input
+														type="radio"
+														class="font-size__btn"
+														name="subtitle-font-size"
+														value="16px"
+														checked
+													/>
+
+													<div
+														class="
+															font-size__label-content
+														"
+													>
+														16px
+													</div>
+												</label>
+											</li>
+
+											<li class="font-size__item">
+												<label class="font-size__label">
+													<input
+														type="radio"
+														class="font-size__btn"
+														name="subtitle-font-size"
+														value="18px"
+													/>
+
+													<div
+														class="
+															font-size__label-content
+														"
+													>
+														18px
+													</div>
+												</label>
+											</li>
+										</ul>
 									</div>
 								</div>
-							</div>
+							</label>
+
+							<ul class="clean-list color color">
+								<li class="color__item color__item--black">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="subtitle-color"
+											value="#000"
+											checked
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--gray800">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="subtitle-color"
+											value="#474747"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--gray600">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="subtitle-color"
+											value="#636363"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--gray500">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="subtitle-color"
+											value="#9e9e9e"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--gray300">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="subtitle-color"
+											value="#bbbbbb"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+
+								<li class="color__item color__item--gray100">
+									<label>
+										<input
+											type="radio"
+											class="color__btn"
+											name="subtitle-color"
+											value="#e3e3e3"
+										/>
+
+										<div class="color__content"></div>
+									</label>
+								</li>
+							</ul>
+						</li>
+
+						<li class="config__item">
+							<label class="config__label">
+								<div class="config__label-caption">
+									Your phone number
+								</div>
+								<input
+									type="tel"
+									class="input-border config__input"
+								/>
+								<div class="add-phone">
+									Add one more phone number
+								</div>
+							</label>
+						</li>
+
+						<li class="config__item">
+							<label class="config__label">
+								<div class="config__label-caption">E-mail</div>
+								<div class="wrap">
+									<input
+										type="mail"
+										class="input-border config__input"
+									/>
+									<div class="container">
+										<label class="display">
+											<input
+												type="checkbox"
+												class="display__btn"
+											/>
+											<div class="display__caption">
+												Display
+											</div>
+										</label>
+									</div>
+								</div>
+							</label>
+						</li>
+
+						<li class="config__item">
+							<label class="config__label">
+								<div class="config__label-caption">Address</div>
+								<div class="wrap">
+									<input
+										type="text"
+										class="input-border config__input"
+									/>
+									<div class="container">
+										<label class="display">
+											<input
+												type="checkbox"
+												class="display__btn"
+											/>
+											<div class="display__caption">
+												Display
+											</div>
+										</label>
+									</div>
+								</div>
+							</label>
 						</li>
 					</ul>
 
-					<div class="form__wrapper">
-						<button class="form__btn">Apply</button>
+					<div class="wrap">
+						<button class="clean-btn menu__btn">Apply</button>
 					</div>
 				</div>
 			</div>

@@ -23,6 +23,7 @@ body {
 	margin: 0;
 
 	@include font;
+	font-size: $font-size-md;
 }
 
 img {
