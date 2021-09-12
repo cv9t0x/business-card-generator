@@ -40,6 +40,15 @@
 		&:last-child {
 			margin-bottom: 0;
 		}
+
+		&--additional {
+			@include flex-dir(row);
+			align-items: center;
+
+			max-width: 25.5rem;
+			margin-top: 1rem;
+			margin-bottom: 0;
+		}
 	}
 
 	&__label-caption {
@@ -50,6 +59,11 @@
 		max-width: 25.5rem;
 		min-width: 25.5rem;
 		padding: 0.5rem;
+
+		&--short {
+			max-width: 20.5rem;
+			min-width: 20.5rem;
+		}
 	}
 
 	.wrap {
@@ -58,7 +72,6 @@
 
 	.container {
 		@include flex-pos(normal, center);
-
 		margin-left: 3rem;
 
 		&__item {

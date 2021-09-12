@@ -1,17 +1,16 @@
 .align,
 .font-size {
 	@include flex-pos(center);
+
 	height: 100%;
 
 	&__item,
 	&__label {
+		display: flex;
+
 		height: inherit;
 
 		cursor: pointer;
-	}
-
-	&__label {
-		display: flex;
 	}
 
 	&__btn {

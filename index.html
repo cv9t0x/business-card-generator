@@ -509,7 +509,7 @@
 							</ul>
 						</li>
 
-						<li class="config__item">
+						<li class="config__item config__item--phone">
 							<div class="wrap">
 								<label for="phone-number" class="config__label">
 									Your phone number
@@ -523,7 +523,30 @@
 								name="phone-number"
 							/>
 
-							<div class="add-phone">
+							<div
+								class="
+									config__item config__item--additional
+									none
+								"
+							>
+								<input
+									type="text"
+									class="
+										input-border
+										config__input config__input--short
+									"
+									name="phone-number-additional"
+								/>
+
+								<div class="phone-wrap">
+									<div
+										data-action-phone="remove"
+										class="add-phone add-phone--remove"
+									></div>
+								</div>
+							</div>
+
+							<div data-action-phone="add" class="add-phone">
 								Add one more phone number
 							</div>
 						</li>
@@ -592,6 +615,6 @@
 			</div>
 		</div>
 
-		<script src="./js/index.js"></script>
+		<script type="module" src="./js/index.js"></script>
 	</body>
 </html>
