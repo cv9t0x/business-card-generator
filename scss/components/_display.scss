@@ -1,0 +1,15 @@
+.display {
+	@include flex-pos(normal, center);
+
+	&__btn {
+		@include box(1.7rem);
+
+		cursor: pointer;
+	}
+
+	&__caption {
+		margin-left: 0.6rem;
+
+		font-size: $font-size-sm;
+	}
+}

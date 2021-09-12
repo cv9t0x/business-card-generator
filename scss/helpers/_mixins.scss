@@ -1,0 +1,155 @@
+@mixin box($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin border(
+	$width: 0.1rem,
+	$style: solid,
+	$color: transparent,
+	$border-radius: 0
+) {
+	border-color: $color;
+	border-style: $style;
+	border-width: $width;
+	border-radius: $border-radius;
+}
+
+@mixin fade($type) {
+	@if $type == 'hide' {
+		visibility: hidden;
+		opacity: 0;
+	} @else if $type == 'show' {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+@mixin flex-dir($flex-direction) {
+	display: flex;
+	flex-direction: $flex-direction;
+	flex-wrap: wrap;
+}
+
+@mixin flex-pos($justify-content, $align-items: $justify-content) {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: $align-items;
+	justify-content: $justify-content;
+}
+
+@mixin font(
+	$font-family: $font-family-primary,
+	$font-weight: $font-weight-nl,
+	$font-size: $font-size-base,
+	$font-style: normal,
+	$font-color: $primary,
+	$line-height: $line-height-nl
+) {
+	color: $font-color;
+	font-weight: $font-weight;
+	font-size: $font-size;
+	font-family: $font-family;
+	font-style: $font-style;
+	line-height: $line-height;
+}
+
+@mixin position(
+	$position,
+	$top: false,
+	$right: false,
+	$bottom: false,
+	$left: false
+) {
+	position: $position;
+	@if $top {
+		top: $top;
+	}
+	@if $right {
+		right: $right;
+	}
+	@if $bottom {
+		bottom: $bottom;
+	}
+	@if $left {
+		left: $left;
+	}
+}
+
+@mixin absolute($args...) {
+	@include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+	@include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+	@include position(fixed, $args...);
+}
+
+@mixin transform($transforms) {
+	transform: $transforms;
+}
+
+@mixin rotate($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+@mixin translate($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+@mixin skew($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin for-size($resolution) {
+	@if $resolution == 1750 {
+		@media only screen and (max-width: 1750px) {
+			@content;
+		}
+	} @else if $resolution == 1175 {
+		@media only screen and (max-width: 1175px) {
+			@content;
+		}
+		@content;
+	} @else if $resolution == 992 {
+		@media only screen and (max-width: 992px) {
+			@content;
+		}
+	} @else if $resolution == 768 {
+		@media only screen and (max-width: 768px) {
+			@content;
+		}
+	} @else if $resolution == 480 {
+		@media only screen and (max-width: 480px) {
+			@content;
+		}
+	}
+}
+
+//COLORS FOR LABELS
+
+@mixin labelColor($key, $color) {
+	.color__item--#{$key} {
+		.color__content {
+			background-color: $color;
+		}
+
+		.color__btn:checked + .color__content {
+			background-color: $white;
+			border-color: $color;
+		}
+	}
+}
+
+@mixin fillColor($colors) {
+	@each $key, $color in $colors {
+		@include labelColor($key, $color);
+	}
+}

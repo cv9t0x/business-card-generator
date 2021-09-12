@@ -1,0 +1,29 @@
+.color {
+	@include flex-pos(normal, center);
+
+	margin-top: 1.5rem;
+
+	&__item {
+		margin-right: 0.5rem;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__content {
+		@include box(2.5rem);
+
+		@include border(0.8rem);
+		border-radius: 50%;
+
+		cursor: pointer;
+	}
+
+	&__btn {
+		display: none;
+	}
+
+	@include fillColor($colors);
+	@include fillColor($grays);
+}

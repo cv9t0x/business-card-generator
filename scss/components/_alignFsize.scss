@@ -1,0 +1,46 @@
+.align,
+.font-size {
+	@include flex-pos(center);
+
+	height: 100%;
+
+	&__item,
+	&__label {
+		display: flex;
+
+		height: inherit;
+
+		cursor: pointer;
+	}
+
+	&__btn {
+		display: none;
+	}
+
+	&__label-content {
+		@include flex-pos(center);
+
+		color: $secondary;
+	}
+
+	&__btn:checked + &__label-content {
+		background-color: $lightgray;
+	}
+}
+
+.align {
+	&__icon {
+		@include box(1.9rem, 1.5rem);
+	}
+
+	&__label-content {
+		padding: 0 1rem;
+	}
+}
+
+.font-size {
+	&__label-content {
+		font-size: $font-size-sm;
+		padding: 0 0.8rem;
+	}
+}
