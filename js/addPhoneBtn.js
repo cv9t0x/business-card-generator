@@ -1,4 +1,4 @@
-export default class AddPhone {
+export default class AddPhoneBtn {
 	constructor(addPhoneContainer, additionalPhoneInput) {
 		this._addPhoneContainer = addPhoneContainer;
 		this._additionalPhoneInput = additionalPhoneInput;
