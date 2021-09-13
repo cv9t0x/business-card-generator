@@ -1,0 +1,79 @@
+.card {
+	@include box(100%);
+	max-width: 60rem;
+
+	margin-top: 8rem;
+	padding-left: 6rem;
+	padding-right: 1rem;
+
+	&__inner {
+		@include flex-dir(column);
+
+		@include box(inherit);
+		padding-top: 2rem;
+		padding-bottom: 6rem;
+
+		background-color: $white;
+
+		box-shadow: 0rem 0.6rem 1.2rem #00000029;
+
+		@include border();
+		border-color: $gray;
+		border-radius: 0.6rem;
+	}
+
+	&__header {
+		text-align: center;
+	}
+
+	&__body {
+		@include flex-dir(column);
+	}
+
+	&__footer {
+		@include flex-pos(flex-end, normal);
+
+		color: $secondary;
+	}
+
+	&__title,
+	&__subtitle {
+		text-transform: initial;
+		text-align: center;
+	}
+
+	&__title {
+		margin-bottom: 0;
+
+		color: $secondary;
+		font-size: 26px;
+	}
+
+	&__subtitle {
+		font-size: 16px;
+		font-weight: $font-weight-nl;
+	}
+}
+
+.list {
+	@include box(50%, auto);
+
+	@include flex-dir(column);
+	padding: 0;
+
+	list-style-type: none;
+
+	font-size: $font-size-sm;
+
+	&__item {
+		margin-bottom: 1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&--additional {
+			display: none;
+		}
+	}
+}
