@@ -13,8 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const applyBtn = document.querySelector('.menu__btn');
 const cardElem = document.querySelector('.card');
-const menu = document.querySelector('.menu');
+const menu = new Menu(document.querySelector('.menu'));
 
 applyBtn.addEventListener('click', () => {
-	console.log(new Menu(menu).collectAllData().getData());
+	menu.collectAllData();
+
+	console.log(menu.config);
 });

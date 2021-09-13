@@ -2,6 +2,8 @@ export default class Menu {
 	constructor(menu) {
 		this._menu = menu;
 		this._config;
+
+		menu.onclick = this.onClick.bind(this);
 	}
 
 	collectAllData() {
@@ -60,10 +62,23 @@ export default class Menu {
 		return displayBtn && !displayBtn.checked ? true : false;
 	}
 
-	getData() {
+	displayRequired(item) {
+		item.closest('.config__item')
+			.querySelector('.config__label')
+			.classList.toggle('required');
+	}
+
+	onClick(event) {
+		if (event.target.classList.contains('display__btn')) {
+			this.displayRequired(event.target);
+		}
+	}
+
+	get config() {
 		if (this._config) {
 			return this._config;
 		}
 		alert('Fill all the input fields');
+		return null;
 	}
 }

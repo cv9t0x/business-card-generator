@@ -13,6 +13,11 @@
 		text-transform: initial;
 	}
 
+	&__subtitle {
+		margin: 0;
+		margin-bottom: 1rem;
+	}
+
 	&__btn {
 		padding: 1rem 2.5rem;
 
@@ -81,5 +86,12 @@
 				margin-right: 0;
 			}
 		}
+	}
+}
+
+.required {
+	&::after {
+		content: '*';
+		margin-left: 0.3rem;
 	}
 }
