@@ -26,6 +26,7 @@
 								class="input-border config__input"
 								id="company-name"
 								name="company-name"
+								required
 							/>
 						</li>
 
@@ -42,6 +43,7 @@
 									class="input-border config__input"
 									id="initials"
 									name="initials"
+									required
 								/>
 
 								<div class="container">
@@ -282,6 +284,7 @@
 									class="input-border config__input"
 									id="job-title"
 									name="job-title"
+									required
 								/>
 
 								<div class="container">
@@ -521,6 +524,7 @@
 								class="input-border config__input"
 								id="phone-number"
 								name="phone-number"
+								required
 							/>
 
 							<div
@@ -540,12 +544,13 @@
 
 								<div class="phone-wrap">
 									<div
+										data-action-phone="remove"
 										class="add-phone add-phone--remove"
 									></div>
 								</div>
 							</div>
 
-							<div class="add-phone">
+							<div data-action-phone="add" class="add-phone">
 								Add one more phone number
 							</div>
 						</li>
@@ -563,12 +568,14 @@
 									class="input-border config__input"
 									id="mail"
 									name="mail"
+									required
 								/>
 								<div class="container">
 									<label class="display">
 										<input
 											type="checkbox"
 											class="display__btn"
+											checked
 										/>
 										<div class="display__caption">
 											Display
@@ -591,12 +598,14 @@
 									class="input-border config__input"
 									name="address"
 									id="address"
+									required
 								/>
 								<div class="container">
 									<label class="display">
 										<input
 											type="checkbox"
 											class="display__btn"
+											checked
 										/>
 										<div class="display__caption">
 											Display
@@ -632,7 +641,8 @@
 							<li
 								class="
 									card__item
-									list__item list__item--additional
+									list__item
+									card__item--additional
 								"
 							></li>
 							<li class="card__item list__item">
