@@ -17,9 +17,14 @@ export default class Menu {
 
 			if (this.checkDisplay(configItem)) continue;
 
-			if (this.checkInput(input)) {
-				this.outlineEmptyInputs(configItems, i);
-				return;
+			switch (this.checkInput(input)) {
+				case 'break':
+					this.outlineEmptyInputs(configItems, i);
+					return;
+				case 'continue':
+					continue;
+				case 'pass':
+					break;
 			}
 
 			this._config[input.name] = {};
@@ -67,10 +72,11 @@ export default class Menu {
 		if (elem.value === '' || elem.value === null) {
 			if (elem.required) {
 				this._config = null;
-				return true;
+				return 'break';
 			}
+			return 'continue';
 		}
-		return false;
+		return 'pass';
 	}
 
 	checkDisplay(elem) {
@@ -79,7 +85,7 @@ export default class Menu {
 		return displayBtn && !displayBtn.checked ? true : false;
 	}
 
-	displayRequired(item) {
+	displayRequiredInput(item) {
 		item.closest('.config__item')
 			.querySelector('.config__label')
 			.classList.toggle('required');
@@ -87,7 +93,7 @@ export default class Menu {
 
 	onClick(event) {
 		if (event.target.classList.contains('display__btn')) {
-			this.displayRequired(event.target);
+			this.displayRequiredInput(event.target);
 		}
 	}
 
@@ -95,7 +101,6 @@ export default class Menu {
 		if (this._config) {
 			return this._config;
 		}
-		alert('Fill all the input fields');
 		return null;
 	}
 }

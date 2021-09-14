@@ -18,5 +18,10 @@ const menu = new Menu(document.querySelector('.menu'));
 applyBtn.addEventListener('click', () => {
 	menu.collectAllData();
 
-	console.log(menu.config);
+	if (!menu.config) {
+		alert('Fill all the input fields');
+		return;
+	}
+
+	new Card(document.querySelector('.card'), menu.config).create();
 });
