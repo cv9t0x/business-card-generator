@@ -18,10 +18,11 @@ export default class Menu {
 			if (this.checkDisplay(configItem)) continue;
 
 			switch (this.checkInput(input)) {
-				case 'break':
+				case 'required empty value':
 					this.outlineEmptyInputs(configItems, i);
+					this._config = null;
 					return;
-				case 'continue':
+				case 'empty value':
 					continue;
 				case 'pass':
 					break;
@@ -52,12 +53,14 @@ export default class Menu {
 
 	outlineEmptyInputs(arr, index) {
 		for (let i = index; i < arr.length; i++) {
-			let elem = arr[i];
-			let input = elem.querySelector('.config__input');
+			const elem = arr[i];
+			const input = elem.querySelector('.config__input');
 
-			input.classList.add('empty-input');
+			if (this.checkInput(input) == 'required empty value') {
+				input.classList.add('empty-input');
 
-			setTimeout(() => input.classList.remove('empty-input'), 3000);
+				setTimeout(() => input.classList.remove('empty-input'), 3000);
+			}
 		}
 	}
 
@@ -71,10 +74,9 @@ export default class Menu {
 	checkInput(elem) {
 		if (elem.value === '' || elem.value === null) {
 			if (elem.required) {
-				this._config = null;
-				return 'break';
+				return 'required empty value';
 			}
-			return 'continue';
+			return 'empty value';
 		}
 		return 'pass';
 	}

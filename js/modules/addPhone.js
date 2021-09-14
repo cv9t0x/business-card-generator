@@ -22,6 +22,7 @@ export default class AddPhone {
 		this._additionalConfigItem.classList.add('none');
 
 		this._additionalPhoneInput.removeAttribute('required');
+		this._additionalPhoneInput.value = '';
 
 		this._relatedTarget.classList.remove('none');
 	}
