@@ -22,6 +22,12 @@
 		border-radius: 0.6rem;
 	}
 
+	&__item {
+		&--additional {
+			display: none;
+		}
+	}
+
 	&__header {
 		text-align: center;
 	}
@@ -66,14 +72,10 @@
 	font-size: $font-size-sm;
 
 	&__item {
-		margin-bottom: 1rem;
+		padding-top: 1rem;
 
-		&:last-child {
-			margin-bottom: 0;
-		}
-
-		&--additional {
-			display: none;
+		&:first-child {
+			padding-top: 0;
 		}
 	}
 }

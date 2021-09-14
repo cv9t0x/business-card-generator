@@ -12,11 +12,15 @@
 			<div class="menu">
 				<div class="menu__inner">
 					<h3 class="menu__title">Business card generator</h3>
+					<h5 class="menu__subtitle">* Required fields</h5>
 
 					<ul class="clean-list config">
 						<li class="config__item">
 							<div class="wrap">
-								<label for="company-name" class="config__label">
+								<label
+									for="company-name"
+									class="config__label required"
+								>
 									Name of the company
 								</label>
 							</div>
@@ -26,12 +30,16 @@
 								class="input-border config__input"
 								id="company-name"
 								name="company-name"
+								required
 							/>
 						</li>
 
 						<li class="config__item">
 							<div class="wrap">
-								<label for="initials" class="config__label">
+								<label
+									for="initials"
+									class="config__label required"
+								>
 									Surname, name and patronymic
 								</label>
 							</div>
@@ -42,6 +50,7 @@
 									class="input-border config__input"
 									id="initials"
 									name="initials"
+									required
 								/>
 
 								<div class="container">
@@ -271,7 +280,10 @@
 
 						<li class="config__item">
 							<div class="wrap">
-								<label for="job-title" class="config__label">
+								<label
+									for="job-title"
+									class="config__label required"
+								>
 									Job title
 								</label>
 							</div>
@@ -282,6 +294,7 @@
 									class="input-border config__input"
 									id="job-title"
 									name="job-title"
+									required
 								/>
 
 								<div class="container">
@@ -511,7 +524,10 @@
 
 						<li class="config__item config__item--phone">
 							<div class="wrap">
-								<label for="phone-number" class="config__label">
+								<label
+									for="phone-number"
+									class="config__label required"
+								>
 									Your phone number
 								</label>
 							</div>
@@ -521,6 +537,7 @@
 								class="input-border config__input"
 								id="phone-number"
 								name="phone-number"
+								required
 							/>
 
 							<div
@@ -540,19 +557,23 @@
 
 								<div class="phone-wrap">
 									<div
+										data-action-phone="remove"
 										class="add-phone add-phone--remove"
 									></div>
 								</div>
 							</div>
 
-							<div class="add-phone">
+							<div data-action-phone="add" class="add-phone">
 								Add one more phone number
 							</div>
 						</li>
 
 						<li class="config__item">
 							<div class="wrap">
-								<label for="mail" class="config__label">
+								<label
+									for="mail"
+									class="config__label required"
+								>
 									E-mail
 								</label>
 							</div>
@@ -563,12 +584,14 @@
 									class="input-border config__input"
 									id="mail"
 									name="mail"
+									required
 								/>
 								<div class="container">
 									<label class="display">
 										<input
 											type="checkbox"
 											class="display__btn"
+											checked
 										/>
 										<div class="display__caption">
 											Display
@@ -580,7 +603,10 @@
 
 						<li class="config__item">
 							<div class="wrap">
-								<label for="address" class="config__label">
+								<label
+									for="address"
+									class="config__label required"
+								>
 									Address
 								</label>
 							</div>
@@ -591,12 +617,14 @@
 									class="input-border config__input"
 									name="address"
 									id="address"
+									required
 								/>
 								<div class="container">
 									<label class="display">
 										<input
 											type="checkbox"
 											class="display__btn"
+											checked
 										/>
 										<div class="display__caption">
 											Display
@@ -616,29 +644,48 @@
 			<div class="card">
 				<div class="card__inner">
 					<div class="card__header">
-						<div class="card__item">Company name</div>
+						<div class="card__item" data-name="company-name">
+							Company name
+						</div>
 					</div>
 
 					<div class="card__body">
-						<h2 class="card__item card__title">
+						<h2 class="card__item card__title" data-name="initials">
 							Surname Name Patronymic
 						</h2>
-						<h3 class="card__item card__subtitle">Job title</h3>
+						<h3
+							class="card__item card__subtitle"
+							data-name="job-title"
+						>
+							Job title
+						</h3>
 					</div>
 
 					<div class="card__footer">
 						<ul class="clean-list list">
-							<li class="card__item list__item">Phone Number</li>
+							<li
+								class="card__item list__item"
+								data-name="phone-number"
+							>
+								Phone Number
+							</li>
 							<li
 								class="
 									card__item
-									list__item list__item--additional
+									list__item
+									card__item--additional
 								"
+								data-name="phone-number-additional"
 							></li>
-							<li class="card__item list__item">
+							<li class="card__item list__item" data-name="mail">
 								example@email.com
 							</li>
-							<li class="card__item list__item">Address</li>
+							<li
+								class="card__item list__item"
+								data-name="address"
+							>
+								Address
+							</li>
 						</ul>
 					</div>
 				</div>
