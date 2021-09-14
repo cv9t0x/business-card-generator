@@ -7,21 +7,19 @@ export default class Menu {
 	}
 
 	collectAllData() {
+		this._config = {};
 		const config = this._menu.querySelector('.config');
 		const configItems = config.querySelectorAll('.config__item');
-		this._config = {};
 
-		for (let configItem of configItems) {
+		for (let i = 0; i < configItems.length; i++) {
+			const configItem = configItems[i];
 			const input = configItem.querySelector('.config__input');
 
 			if (this.checkDisplay(configItem)) continue;
 
-			if (input.value === '' || input.value === null) {
-				if (input.required) {
-					this._config = null;
-					return this;
-				}
-				continue;
+			if (this.checkInput(input)) {
+				this.outlineEmptyInputs(configItems, i);
+				return;
 			}
 
 			this._config[input.name] = {};
@@ -45,8 +43,17 @@ export default class Menu {
 				}
 			});
 		}
+	}
 
-		return this;
+	outlineEmptyInputs(arr, index) {
+		for (let i = index; i < arr.length; i++) {
+			let elem = arr[i];
+			let input = elem.querySelector('.config__input');
+
+			input.classList.add('empty-input');
+
+			setTimeout(() => input.classList.remove('empty-input'), 3000);
+		}
 	}
 
 	collectOptionData(elements) {
@@ -54,6 +61,16 @@ export default class Menu {
 			?.value;
 
 		return value;
+	}
+
+	checkInput(elem) {
+		if (elem.value === '' || elem.value === null) {
+			if (elem.required) {
+				this._config = null;
+				return true;
+			}
+		}
+		return false;
 	}
 
 	checkDisplay(elem) {
