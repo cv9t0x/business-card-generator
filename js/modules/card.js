@@ -5,18 +5,18 @@ export default class Card {
 	}
 
 	create() {
-		let cardItems = this._elem.querySelectorAll('.card__item');
+		const cardItems = this._elem.querySelectorAll('.card__item');
 
 		this.fill(cardItems);
 	}
 
 	fill(elemArr) {
-		for (let elem of elemArr) {
-			let key = elem.dataset.name;
-			let value = this._config[key]?.value;
-			let align = this._config[key]?.align;
-			let color = this._config[key]?.color;
-			let fontSize = this._config[key]?.fontSize;
+		for (const elem of elemArr) {
+			const key = elem.dataset.name;
+			const value = this._config[key]?.value;
+			const align = this._config[key]?.align;
+			const color = this._config[key]?.color;
+			const fontSize = this._config[key]?.fontSize;
 
 			if (value) {
 				if (elem.classList.contains('none'))
